@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Mergify Queue Adder",
+  "description": "Adds a button to GitHub; when clicked, auto-comments '@Mergifyio queue' to manage tasks.",
+  "version": "1.0",
+  "permissions": [
+    "https://github.com/*"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "icons": {
+    "16": "images/icon.jpeg",
+    "48": "images/icon.jpeg",
+    "128": "images/icon.jpeg"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
